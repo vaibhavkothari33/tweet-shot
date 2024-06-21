@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - TweetShot</title>
+    <title>Tweet Details - TweetShot</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to TweetShot!</h1>
-    <form id="fetchForm">
-        <label for="tweetUrl">Enter Tweet URL:</label>
-        <input type="text" id="tweetUrl" name="tweetUrl" required>
-        <button type="submit">Fetch Tweet</button>
-    </form>
-    <div id="tweetDetails"></div>
+    <h1>Tweet Details</h1>
+    <div>
+        <h2>{{ tweet.author }}</h2>
+        <img src="{{ tweet.author_image }}" alt="Author Image">
+        <p>{{ tweet.text }}</p>
+        <p>Likes: {{ tweet.likes }}</p>
+        <p>Retweets: {{ tweet.retweets }}</p>
+    </div>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
